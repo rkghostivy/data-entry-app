@@ -1,3 +1,26 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "plugins": ["prettier"],
+  "extends": ["next/core-web-vitals", "next", "eslint:recommended", "prettier"],
+  "rules": {
+    "no-unused-vars": "warn", // or "@typescript-eslint/no-unused-vars": "off",
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto",
+        "trailingComma": "es5"
+      }
+    ]
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.mts", "*.cts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }

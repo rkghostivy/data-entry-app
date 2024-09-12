@@ -5,7 +5,7 @@ import { RowDataPacket } from 'mysql2';
 interface User extends RowDataPacket {
   id: number;
   name: string;
-  hashed_password: string; 
+  password: string; 
 }
 
 

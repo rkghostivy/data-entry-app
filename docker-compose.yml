@@ -10,7 +10,7 @@ services:
     depends_on:
       - mysql
       - mongodb
-
+    stdin_open: true
   mysql:
     image: mysql:8
     environment:
@@ -19,7 +19,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "3307:3306"
 
   mongodb:
     image: mongo
